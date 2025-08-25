@@ -130,7 +130,7 @@ const TeamSection = () => {
            before:absolute
            before:bottom-0
            before:left-1/2
-           before:top-12
+           before:top-[110%]
            before:-translate-x-1/2
            before:w-16
            before:h-1
