@@ -18,7 +18,7 @@ const Header = () => (
 // Hero Section Component
 const HeroSection = () => (
   <section className="relative py-5 flex items-center justify-center text-center overflow-hidden"> 
-        <div className="mx-8">
+        <div className="mx-4">
             <img
                 src="/hero.png"
                 alt="Woman in white top"
