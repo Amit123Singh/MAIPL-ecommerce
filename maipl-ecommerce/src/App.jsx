@@ -17,9 +17,7 @@ const Header = () => (
 
 // Hero Section Component
 const HeroSection = () => (
-  <section className="relative bg-gray-100 py-20 md:py-32 flex items-center justify-center text-center overflow-hidden">    {/* Content */}
-    <div className="relative z-10 flex items-center justify-center">
-        <span className="text-4xl text-green-600 opacity-50 transform -scale-x-100">🌿</span>
+  <section className="relative py-5 flex items-center justify-center text-center overflow-hidden"> 
         <div className="mx-8">
             <img
                 src="/hero.png"
@@ -28,20 +26,20 @@ const HeroSection = () => (
                 onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/250x350/ffffff/cccccc?text=Image+Not+Found'; }}
             />
         </div>
-        <span className="text-4xl text-green-600 opacity-50">🌿</span>
-    </div>
   </section>
 );
 
 // About Text Section Component
 const AboutTextSection = () => (
-  <section className="py-16 sm:py-20">
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+  <section className="py-5 mx-8">
+    <div className=" px-4 sm:px-6 lg:px-8 text-center">
+
+      <h3 className="text-2xl text-left md:text-2xl font-bold text-gray-800">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
       </h3>
-      <p className="mt-6 text-gray-600 leading-relaxed">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+      <p className="mt-6 text-gray-600 leading-relaxed text-justify">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
       </p>
     </div>
   </section>
@@ -74,24 +72,38 @@ const TestimonialsSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <p className="text-sm text-red-500 font-semibold uppercase">Latest Testimonials</p>
-                    <h2 className="mt-2 text-3xl md:text-4xl font-extrabold text-gray-800">WHAT PEOPLE SAY</h2>
+                    <h2 className=" mt-2 text-3xl md:text-4xl font-extrabold text-gray-800 relative inline-block text-2xl font-bold
+           before:content-['']
+           before:absolute
+           before:bottom-0
+           before:left-1/2
+           before:top-12
+           before:-translate-x-1/2
+           before:w-16
+           before:h-1
+           before:bg-orange-500">WHAT PEOPLE SAY</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="flex flex-col sm:flex-row items-center text-center sm:text-left">
-                            <img
-                                className="w-24 h-24 rounded-full object-cover flex-shrink-0 mb-4 sm:mb-0 sm:mr-6"
-                                src={testimonial.avatar}
-                                alt={testimonial.name}
-                                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/100x100/e0e0e0/cccccc?text=Error'; }}
-                            />
-                            <div>
-                                <p className="text-gray-600 italic">"{testimonial.quote}"</p>
-                                <h4 className="mt-4 font-bold text-gray-900">{testimonial.name}</h4>
-                                <p className="text-sm text-gray-500">{testimonial.title}</p>
-                            </div>
-                        </div>
-                    ))}
+                  
+                    {testimonials.map((testimonial) => (
+                          <figure key={testimonial.id} className="flex flex-col sm:flex-row items-center text-center sm:text-left p-4">
+                              <img
+                                  className="w-24 h-24 rounded-full object-cover flex-shrink-0 mb-4 sm:mb-0 sm:mr-6"
+                                  src={testimonial.avatar}
+                                  alt={`Photo of ${testimonial.name}`} 
+                                  onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/100x100/e0e0e0/cccccc?text=Error'; }}
+                              />
+                              <div className="flex-grow">
+                                  <blockquote className="text-gray-600 italic mb-4">
+                                      <p>"{testimonial.quote}"</p>
+                                  </blockquote>
+                                  <figcaption className="font-medium">
+                                      <div className="font-bold text-orange-500">{testimonial.name}</div>
+                                      <div className="text-sm text-gray-500">{testimonial.title}</div>
+                                  </figcaption>
+                              </div>
+                          </figure>
+                      ))}
                 </div>
             </div>
         </section>
@@ -113,11 +125,21 @@ const TeamSection = () => {
         <section className="py-16 sm:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">MULTIKART TEAM MEMBER</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 relative inline-block text-2xl font-bold
+           before:content-['']
+           before:absolute
+           before:bottom-0
+           before:left-1/2
+           before:top-12
+           before:-translate-x-1/2
+           before:w-16
+           before:h-1
+           before:bg-orange-500">MULTIKART TEAM MEMBER</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {teamMembers.map((member, index) => (
-                        <div key={index} className="text-center bg-white p-4 rounded-lg transition-shadow duration-300 hover:shadow-xl">
+
+                        <div key={index} className="text-center bg-white p-4 rounded-lg transition-shadow duration-300 hover:shadow-xl border-2 border-gray-300 p-4">
                             <div className="relative overflow-hidden rounded-md">
                                 <img
                                     className="w-full h-auto object-cover"
@@ -126,7 +148,7 @@ const TeamSection = () => {
                                     onError={(e) => { e.target.onerror = null; e.targe.src='https://placehold.co/400x500/f0f0f0/cccccc?text=Error'; }}
                                 />
                             </div>
-                            <div className="mt-4">
+                            <div className="mt-4 bg-gray-200 rounded">
                                 <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
                                 <p className="text-gray-500">{member.role}</p>
                             </div>
@@ -167,12 +189,14 @@ const FeaturesSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {features.map((feature, index) => (
-                        <div key={index} className="flex items-center justify-center md:justify-start">
-                            <div className="text-4xl mr-4">{<feature.icon className="h-12 w-12 text-orange-500" />}</div>
-                            <div>
-                                <h3 className="text-lg font-bold text-gray-900">{feature.title}</h3>
-                                <p className="text-gray-600">{feature.description}</p>
-                            </div>
+                        <div key={index} className="flex flex-col sm:flex-row items-center justify-center md:justify-start p-4">
+                          <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
+                            <feature.icon className="h-12 w-12 text-orange-500" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold text-gray-900 text-center sm:text-left">{feature.title}</h3>
+                            <p className="text-gray-600 text-center sm:text-left">{feature.description}</p>
+                          </div>
                         </div>
                     ))}
                 </div>
