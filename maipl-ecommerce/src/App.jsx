@@ -134,7 +134,7 @@ const TeamSection = () => {
            before:-translate-x-1/2
            before:w-16
            before:h-1
-           before:bg-orange-500">MULTIKART TEAM MEMBER</h2>
+           before:bg-orange-500">YRAL FOOD TEAM MEMBER</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {teamMembers.map((member, index) => (
