@@ -70,7 +70,7 @@ const FaqItem = ({ item, isOpen, onClick }) => {
         <h3 className={`text-base md:text-lg font-medium ${isOpen ? 'text-orange-500' : 'text-gray-800'}`}>
           {item.question}
         </h3>
-        {isOpen ? <ChevronUp className="h-5 w-5 text-orange-500" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
+        {isOpen ? <ChevronUp className="h-5 w-5 text-orange-500 flex-shrink-0" /> : <ChevronDown className="h-5 w-5 text-gray-500 flex-shrink-0" />}
       </button>
       <div
         className={`transition-all duration-300 ease-in-out overflow-hidden ${
