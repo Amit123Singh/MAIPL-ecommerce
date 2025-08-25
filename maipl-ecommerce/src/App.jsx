@@ -2,7 +2,7 @@ import React from 'react';
 import Icon1 from './assets/svgs/ab.svg?react';
 import Icon2 from './assets/svgs/ac.svg?react';
 import Icon3 from './assets/svgs/ad.svg?react';
-
+import Faq from './components/Faq';
 
 
 // Header Component for Breadcrumbs
@@ -221,6 +221,8 @@ const App = () => {
             <TeamSection />
             {/* <FeaturesSection /> */}
         </main>
+
+        <Faq />
     </div>
   );
 };
