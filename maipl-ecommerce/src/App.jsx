@@ -219,7 +219,7 @@ const App = () => {
             <AboutTextSection />
             <TestimonialsSection />
             <TeamSection />
-            <FeaturesSection />
+            {/* <FeaturesSection /> */}
         </main>
     </div>
   );
