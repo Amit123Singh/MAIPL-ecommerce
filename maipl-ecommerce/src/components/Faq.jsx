@@ -118,13 +118,5 @@ const Faq = () => {
   );
 };
 
-// App component to render the Faq section for preview
-function App() {
-  return (
-    <div className="font-sans">
-      <Faq />
-    </div>
-  );
-}
 
-export default App;
+export default Faq;

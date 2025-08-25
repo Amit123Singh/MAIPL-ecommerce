@@ -5,7 +5,7 @@ import Icon3 from './assets/svgs/ad.svg?react';
 import Faq from './components/Faq';
 
 
-// Header Component for Breadcrumbs
+// Header Component 
 const Header = () => (
   <header className="bg-gray-50 py-8">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -23,7 +23,6 @@ const HeroSection = () => (
                 src="/hero.png"
                 alt="Woman in white top"
                 className="rounded-lg shadow-lg"
-                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/250x350/ffffff/cccccc?text=Image+Not+Found'; }}
             />
         </div>
   </section>
